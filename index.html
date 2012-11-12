@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Prueba</title>
+        <link href="css/prueba.css" rel="stylesheet" type="text/css">
+
+        <!-- Cuore -->
+        <script src="js/libs/cuore-1.1-min.js" type="text/javascript"></script>
+        <script src="js/libs/jquery-1.7.2.min.js" type="text/javascript"></script>
+        <script src="js/libs/jquery.maxlength-min.js" type="text/javascript"></script>
+        <script src="js/libs/moment.min.js" type="text/javascript"></script>
+
+        <!-- source -->
+        <script src="js/src/Prueba.js" type="text/javascript"></script>
+        <!-- pages -->
+        <script src="js/src/Pages/Prueba.Pages.Index.js" type="text/javascript"></script>
+        <!-- components -->
+        <script src="js/src/Components/Prueba.Components.InsertComment.js" type="text/javascript"></script>
+        <script src="js/src/Components/Prueba.Components.ListComments.js" type="text/javascript"></script>
+        <!-- renderers -->
+        <script src="js/src/Renderers/Prueba.Renderers.InsertComment.js" type="text/javascript"></script>
+        <script src="js/src/Renderers/Prueba.Renderers.ListComments.js" type="text/javascript"></script>
+        
+
+        <script type="text/javascript">
+            CUORE.Dom.ready(function() {
+                // cache for labelService
+                var currentLocale = (navigator.language || navigator.browserLanguage);
+                document.labels = {};
+                document.labels[currentLocale] = {
+                    "prueba.insertComment.placeholder": "Insert comment",
+                    "prueba.insertComment.maxlength": "You have typed too many characters."
+                };
+
+                // CUORE.Bus.enableDebug();
+                document.page = new Prueba.Pages.Index("http://www.anydomain.com");
+                document.page.draw();
+            });
+        </script>
+    </head>
+    <body>
+        <div id="insertComment">
+            This MUST disappear
+        </div>
+        <ul id="listComments">
+            This MUST disappear
+        </ul>
+    </body>
+</html>
