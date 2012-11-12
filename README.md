@@ -1,1 +1,1 @@
-Ejemple with Cuore.js
+Example with Cuore.js
